@@ -8,9 +8,9 @@ profile:
   align: right
   image: prof_pic.jpg
   address: >
-    <p>Buys Ballotgebouw, Office 524</p>
-    <p>Princentonplein 5</p>
-    <p>Utrecht, Netherlands</p>
+    <p`Buys Ballotgebouw, Office 524`</p>
+    <p>`Princentonplein 5`</p>
+    <p>`Utrecht, Netherlands`</p>
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
