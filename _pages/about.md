@@ -12,9 +12,9 @@ profile:
     <p><code>Princetonplein 5</code></p>
     <p><code>Utrecht, Netherlands</code></p>
 
-news: false  # includes a list of news items
+news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 ---
 
 I am a PhD student at [Utrecht University](https://uu.nl/en) under the supervision of [Brian Logan](https://alechina-logan.net/brian/) and [Mehdi Dastani](https://www.uu.nl/staff/mmdastani), in the [Intelligent Systems group](https://www.uu.nl/en/research/intelligent-software-systems/intelligent-systems).
