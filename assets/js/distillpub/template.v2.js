@@ -961,9 +961,7 @@ ${math}
   }
   function doi_string(ent, new_line) {
     if ("doi" in ent) {
-      return `${new_line ? "<br>" : ""} <a href="https://doi.org/${
-        ent.doi
-      }" style="text-decoration:inherit;">DOI: ${ent.doi}</a>`;
+      return `${new_line ? "<br>" : ""} <a href="https://doi.org/${ent.doi}" style="text-decoration:inherit;">DOI: ${ent.doi}</a>`;
     } else {
       return "";
     }
@@ -10321,9 +10319,7 @@ distill-header .nav a {
         html += `<a href="${frontMatter.githubCompareUpdatesUrl}">View all changes</a> to this article since it was first published.`;
       }
       html += `
-    If you see mistakes or want to suggest changes, please <a href="${
-      frontMatter.githubUrl + "/issues/new"
-    }">create an issue on GitHub</a>. </p>
+    If you see mistakes or want to suggest changes, please <a href="${frontMatter.githubUrl + "/issues/new"}">create an issue on GitHub</a>. </p>
     `;
     }
 
@@ -10339,13 +10335,9 @@ distill-header .nav a {
       html += `
     <h3 id="citation">Citation</h3>
     <p>For attribution in academic contexts, please cite this work as</p>
-    <pre class="citation short">${frontMatter.concatenatedAuthors}, "${
-      frontMatter.title
-    }", Distill, ${frontMatter.publishedYear}.</pre>
+    <pre class="citation short">${frontMatter.concatenatedAuthors}, "${frontMatter.title}", Distill, ${frontMatter.publishedYear}.</pre>
     <p>BibTeX citation</p>
-    <pre class="citation long">${serializeFrontmatterToBibtex(
-      frontMatter,
-    )}</pre>
+    <pre class="citation long">${serializeFrontmatterToBibtex(frontMatter)}</pre>
     `;
     }
 
