@@ -3,8 +3,6 @@ author="Varricchione, Giovanni
 and Alechina, Natasha
 and Dastani, Mehdi
 and Logan, Brian",
-editor="Malvone, Vadim
-and Murano, Aniello",
 title="Synthesising Reward Machines for Cooperative Multi-Agent Reinforcement Learning",
 booktitle="Proceedings of the 20th European Conference on Multi-Agent Systems (EUMAS 2023)",
 year="2023",
@@ -34,3 +32,56 @@ pdf={aaai24-ppam.pdf},
 poster={aaai24-ppam-poster.pdf},
 abbr={AAAI},
 }
+
+@InProceedings{varricchione2024fdcl,
+title="Frame Definability in Conditional Logic",
+author="Fornasiere, Damiano and Marti, Johannes and Varricchione, Giovanni",
+year=2024,
+booktitle="Proceedings of the 15th Conference on Advances in Modal Logic (AiML 2024)",
+abstract="In this paper we investigate classes of finite partially ordered sets that are definable by non-nested formulas in conditional logic. We discuss examples of such definable classes and introduce the notion of a c-morphism between posets as a tool to show that a class of finite posets is not definable. Using an analogue of the Jankov-Fine formulas from modal logic, we show that a class of finite posets is definable by a set of formulas if and only if it is closed under c-morphic images. Lastly, we prove a Sahlqvist-like correspondence theorem stating that every class of finite posets that is definable by a formula without nested conditionals is also definable by a first-order formula.",
+pdf={aiml24-fdcl.pdf},
+abbr={AiML},
+}
+
+@InProceedings{varricchione2024mprm,
+author="Varricchione, Giovanni
+and Alechina, Natasha
+and Dastani, Mehdi
+and Logan, Brian",
+title="Maximally Permissive Reward Machines",
+year=2024,
+booktitle="Proceedings of the 27th European Conference on Artificial Intelligence (ECAI 2024)",
+abstract="Reward machines allow the definition of rewards for temporally extended tasks and behaviors. Specifying “informative” reward machines can be challenging. One way to address this is to generate reward machines from a high-level abstract description of the learning environment, using techniques such as AI planning. However, previous planning-based approaches generate a reward machine based on a single (sequential or partial-order) plan, and do not allow maximum flexibility to the learning agent. In this paper we propose a new approach to synthesising reward machines which is based on the set of partial order plans for a goal. We prove that learning using such “maximally permissive” reward machines results in higher rewards than learning using RMs based on a single plan. We present experimental results which support our theoretical claims by showing that our approach obtains higher rewards than the single-plan approach in practice.",
+pdf={ecai24-mprm.pdf},
+abbr={ECAI},
+}
+
+@InProceedings{varricchione20253spells,
+author="Barbaro, Luca
+and Varricchione, Giovanni
+and Montali, Marco
+and Di Ciccio, Claudio",
+title="From Sound Workflow Nets to LTL_f Declarative Specifications by Casting Three Spells",
+year=2025,
+booktitle="Proceedings of the BPM Forum, co-located with BPM 2025 (to appear)",
+abstract="In process management, effective behavior modeling is essential
+for understanding execution dynamics and identifying potential issues.
+Two complementary paradigms have emerged in the pursuit of this
+objective: the imperative approach, representing all allowed runs of a
+system in a graph-based model, and the declarative one, specifying the
+rules that a run must not violate in a constraint-based specification. Ex-
+tensive studies have been conducted on the synergy and comparisons of
+the two paradigms. To date, though, whether a declarative specification
+could be systematically derived from an imperative model such that
+the original behavior was fully preserved (and if so, how) remained an
+unanswered question. In this paper, we propose a three-fold contribu-
+tion. (1) We introduce a systematic approach to synthesize declarative
+process specifications from safe and sound Workflow nets. (2) We prove
+behavioral equivalence of the input net with the output specification,
+alongside related guarantees. (3) We experimentally demonstrate the
+scalability and compactness of our encoding through tests conducted
+with synthetic and real-world testbeds.",
+pdf={bpmforum25-3spells.pdf},
+abbr={BPM Forum},
+}
+
