@@ -300,7 +300,8 @@ scholar:
   details_link: Details
 
   query: "@*"
-  group_by: year,month
+  group_by: year
+  sort_by: year,month
   group_order: descending
 
 # Display different badges withs stats for your publications
