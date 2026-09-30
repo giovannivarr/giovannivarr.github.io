@@ -369,3 +369,32 @@ details ul li:last-child {
     color: var(--link-color); /* Turns teal on hover */
     border-bottom: 1px solid var(--link-color); /* Turns into a solid line */
 }
+
+/* --- For mobile phones --- */
+@media (max-width: 800px) {
+    /* Stack the panes vertically */
+    .container {
+        flex-direction: column;
+        padding: 1rem; /* Slightly smaller padding for phone screens */
+    }
+
+    /* Let the text pane take up the full width */
+    .left-pane {
+        width: 100%;
+        padding-right: 0; 
+    }
+
+    /* Let the image take up the full width at the bottom */
+    .right-pane {
+        width: 100%;
+        min-height: 400px; /* Sets a nice fixed height for the GIF on phones */
+        margin-top: 2rem; /* Adds space between the bottom of the text and the image */
+    }
+
+    /* Make sure the navigation menu wraps nicely on small screens */
+    nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center; /* Centers the links on phones */
+    }
+}
