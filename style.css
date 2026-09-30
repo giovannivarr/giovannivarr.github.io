@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght@8..144,-10..0,25..151,100..1000&display=swap');
+
+/* --- COLOR THEMES --- */
+:root {
+    --bg-color: #d3e8e1; /* Pastel green-blue */
+    --text-main: #000000;
+    --text-body: #111111;
+    --text-muted: rgba(0, 0, 0, 0.5);
+    --link-color: #0b5351; /* Deep slate-teal */
+    --border-color: rgba(0, 0, 0, 0.1);
+    --news-bg: rgba(255, 255, 255, 0.4);
+    --image-fallback: rgba(0, 0, 0, 0.05);
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+    --bg-color: #23332d; /* Deep dark pastel forest-slate */
+    --text-main: #f0f4f2;
+    --text-body: #d8e2de;
+    --text-muted: rgba(255, 255, 255, 0.5);
+    --link-color: #88d4c1; /* Bright pastel teal for visibility */
+    --border-color: rgba(255, 255, 255, 0.15);
+    --news-bg: rgba(0, 0, 0, 0.25);
+    --image-fallback: rgba(255, 255, 255, 0.05);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* --- BASE STYLES --- */
+body {
+    margin: 0;
+    padding: 2rem;
+    font-family: "Roboto Flex", sans-serif; /* Updated to Roboto Flex */
+    font-weight: 400; /* Standard default weight */
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Variable Settings for Headers */
+.content h1, .content h2, nav a {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700; /* You can tweak this weight */
+    font-style: normal;
+    font-variation-settings:
+        "slnt" -5,
+        "wdth" 125,
+        "GRAD" 100,
+        "XOPQ" 96,
+        "XTRA" 515,
+        "YOPQ" 79,
+        "YTAS" 750,
+        "YTDE" -204,
+        "YTFI" 738,
+        "YTLC" 514,
+        "YTUC" 760;
+}
+
+/* Ensure the spacing on headers remains clean */
+.content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    gap: 5rem;
+}
+
+.left-pane {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-pane {
+    flex: 1;
+    min-height: 600px;
+    border-radius: 16px;
+    background-color: var(--image-fallback);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* --- NAVIGATION --- */
+nav {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin-right: 2rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a.active, nav a:hover {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    margin-left: auto; /* Pushes the button to the far right of the nav */
+    margin-right: 0;
+    cursor: pointer;
+}
+
+/* --- TYPOGRAPHY & LINKS --- */
+.content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    letter-spacing: -0.02em;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.content p, .content li {
+    line-height: 1.7;
+    font-size: 1.1rem;
+    color: var(--text-body);
+}
+
+.content a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+.news-item {
+    background: var(--news-bg);
+    border-left: 3px solid var(--text-main);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+    color: var(--text-body);
+}
+
+.links {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.links a {
+    margin-right: 1.5rem;
+    color: var(--link-color);
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.links a:hover {
+    opacity: 0.7;
+}
+
+/* --- COLLAPSIBLE LISTS --- */
+details {
+    margin-bottom: 1.5rem;
+}
+
+summary {
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    list-style: none;
+    outline: none;
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+summary:hover {
+    color: var(--link-color);
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '►';
+    font-size: 0.8rem;
+    margin-right: 0.8rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
+    color: var(--link-color);
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.details-content {
+    overflow: hidden;
+}
+
+details ul {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+details ul li {
+    margin-bottom: 1.5rem;
+}
+
+details ul li:last-child {
+    margin-bottom: 0; 
+}
+
+/* --- SEARCH & FILTERS --- */
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap; /* Allows the elements to break onto new lines */
+    align-items: center;
+    width: 100%;
+}
+
+/* Base styling for both input and dropdowns */
+.filters input, .filters select {
+    box-sizing: border-box; /* This forces them to align perfectly! */
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--news-bg);
+    color: var(--text-main);
+    font-family: inherit; 
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* Placeholder text styling */
+.filters input::placeholder {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Forces the search bar to take up 100% of the first line */
+.filters input {
+    flex: 1 1 100%; 
+    min-width: 100%; 
+}
+
+/* Makes the two dropdowns share the second line equally */
+.filters select {
+    flex: 1; /* They will split the remaining space 50/50 */
+    cursor: pointer;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 2.5rem; 
+    font-weight: 500;
+    
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+}
+
+[data-theme="dark"] .filters select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d8e2de' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+.filters input:hover, .filters select:hover {
+    border-color: var(--text-muted);
+}
+
+.filters input:focus, .filters select:focus {
+    border-color: var(--link-color);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    background-color: var(--bg-color);
+}
+
+/* --- ABSTRACTS --- */
+.toggle-abstract {
+    margin-left: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem; /* Space between the arrow and the text */
+}
+
+/* The Triangle Arrow */
+.toggle-abstract::before {
+    content: '▶';
+    font-size: 0.7rem;
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+/* When the abstract is open, rotate the arrow pointing down */
+.toggle-abstract.open::before {
+    transform: rotate(90deg);
+}
+
+/* The invisible container we will animate */
+.abstract-wrapper {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.3s ease, opacity 0.3s ease; /* Matches your Year animation */
+}
+
+/* The styled text box inside the wrapper */
+.abstract {
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem 1.25rem;
+    background-color: var(--news-bg);
+    border-left: 3px solid var(--link-color);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+/* --- GENERAL CONTENT LINKS --- */
+/* Applies the dotted-underline style to all links EXCEPT the abstract toggle */
+.content a:not(.toggle-abstract) {
+    color: inherit; /* Keeps the text color neutral by default */
+    text-decoration: none; /* Removes the standard thick underline */
+    border-bottom: 1px dotted var(--text-muted); /* Adds the subtle dotted line */
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+/* The hover effect for all links */
+.content a:not(.toggle-abstract):hover {
+    color: var(--link-color); /* Turns teal on hover */
+    border-bottom: 1px solid var(--link-color); /* Turns into a solid line */
+}

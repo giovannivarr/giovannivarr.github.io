@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Giovanni Varricchione</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="left-pane">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="publications.html" class="active">Publications</a>
+                <a href="activities.html">Activities</a>
+                <a href="extras.html">Extras</a>
+                <a href="#" id="theme-toggle" style="font-size: 1.3rem; margin-top: -4px;">☾</a>
+            </nav>
+
+            <div class="content">
+                <h1>Publications</h1>
+                
+                <div class="filters">
+                    <input type="text" id="search-bar" placeholder="Search by title, author, or keyword...">
+                    <!-- TEMPORARILY DISABLED: Filter Bar  
+                    <select id="venue-filter">
+                        <option value="all">All Venues</option>
+                        <option value="conference">Conference</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="journal">Journal</option>
+                        <option value="preprint">Preprint</option>
+                        <option value="thesis">Thesis</option>
+                    </select>
+
+                    <select id="topic-filter">
+                        <option value="all">All Topics</option>
+                        <option value="rl">Reinforcement Learning</option>
+                        <option value="logic">Logic</option>
+                        <option value="process-mining">Process Mining</option>
+                        <option value="other">Other</option>
+                    </select>
+                    -->
+                </div>
+                
+
+                <details open>
+                    <summary>2026</summary>
+                    <div class="details-content">
+                        <ul>
+                            <li data-venue="journal" data-topics="rl logic">
+                                <strong>Synthesising Reward Machines for Cooperative Multi-Agent Reinforcement Learning</strong> <br> Giovanni Varricchione, Natasha Alechina, Mehdi Dastani, Brian Logan. <em>Journal of Artificial Intelligence Research (JAIR).</em> [<a href="resources/marm-jair.pdf">PDF</a>]
+
+                                <a href="#" class="toggle-abstract">Abstract</a>
+                                <div class="abstract-wrapper">
+                                    <div class="abstract">
+                                        Reward machines have recently been proposed as a means of encoding team tasks in cooperative multi-agent reinforcement learning. The resulting multi-agent reward machine is then decomposed into individual reward machines, one for each member of the team, allowing agents to learn in a decentralised manner while still achieving the team task. In this paper, we show how multi-agent reward machines for team tasks can be synthesised automatically from an abstraction of the environment in which the agents act and a high-level specification of the desired team behaviour expressed in a fragment of Alternating-time Temporal Logic. We present results from a number of benchmarks which suggest that our automated approach performs as well or better than reward machines in the literature.
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li data-venue="conference" data-topics="rl">
+                                <strong>Leveraging Reward Machines for Efficient Multi-Objective Reinforcement Learning</strong> <br> Panos Aronis, Mehdi Dastani, Roxana Rădulescu, Giovanni Varricchione. <em>Reinforcement Learning Conference (RLC).</em> [<a href="resources/morm.pdf">PDF</a>]
+
+                                <a href="#" class="toggle-abstract">Abstract</a>
+                                <div class="abstract-wrapper">
+                                    <div class="abstract">
+                                        Reinforcement Learning (RL) provides a powerful framework for sequential decision-making, typically assuming a single scalar reward function and a Markovian reward structure. However, many real-world problems involve multiple, potentially conflicting objectives and require temporally extended behaviours that fundamentally violate the Markov property. These complexities have separately motivated the study of Multi-Objective Reinforcement Learning (MORL) and Reward Machines (RMs), both of which demand new representations and learning strategies to ensure effective, sample-efficient, and interpretable solutions. To address these challenges, we propose a novel framework, Multi-Objective Reward Machines (MORMs), to handle non-Markovian reward structure and multiple objectives in a unified setting, enabling more principled and sample-efficient learning in complex sequential decision-making tasks.
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li data-venue="thesis" data-topics="rl">
+                                <strong>Declarative Specifications for Efficient and Safe Reinforcement Learning</strong> <br> Giovanni Varricchione. <em>PhD thesis.</em> [<a href="resources/thesis.pdf">PDF</a>]
+
+                                <a href="#" class="toggle-abstract">Abstract</a>
+                                <div class="abstract-wrapper">
+                                    <div class="abstract">
+                                        In recent years, there have been several developments combining reinforcement learning (RL) with techniques from theoretical computer science fields such as logic and formal methods. The main goal of these works was to improve training speed and quality, and in some cases also enforce safety constraints. In this dissertation, we present several works that followed this research line. First, we explore research directions concerning reward machines (RMs), an approach proposed to improve training speed and train agents in achieving tasks that require temporally extended behaviours. Given an abstraction of the environment in which the agent acts, we show how we can generate a reward machine from the set of all plans to achieve the task in the abstraction. As the plans come from an abstraction of the environment, the agent still needs to learn how to enact them in order to achieve the task, which is done via RL. Then, we synthesise reward machines in a cooperative multi-agent scenario by using Alternating-time Temporal Logic (ATL) formulas encoding coalition tasks. By model checking the ATL formula, we can obtain a strategy (if there is any) for the coalition to achieve the task, which is then translated to a RM and used to train the agents. We then present an extension of reward machines that endows them with a pushdown stack, obtaining a "pushdown reward machine" (pdRM). As pdRMs are based on pushdown automata, they can encode a strictly larger set of tasks compared to standard RMs, while still enabling more efficient learning compared to other approaches. Finally, we present a work in safe RL, where agents must also respect safety constraints. We present how to enforce safety constraints using pure-past linear-time temporal logic (PPLTL). Each action is associated to a PPLTL formula, and by evaluating the formulas at each timestep we determine which actions the agent can to perform, guaranteeing constraint satisfaction.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2025</summary>
+                    <div class="details-content">
+                        <ul>
+                            <li data-venue="conference" data-topics="process-mining">
+                                <strong>Pushdown Reward Machines for Reinforcement Learning</strong> <br> Giovanni Varricchione, Toryn Q. Klassen, Natasha Alechina, Mehdi Dastani, Brian Logan, Sheila A. McIlraith. <em>International Conference on Principles of Knowledge Representation and Reasoning (KR).</em> [<a href="resources/pdrm.pdf">PDF</a>]
+
+                                <a href="#" class="toggle-abstract">Abstract</a>
+                                <div class="abstract-wrapper">
+                                    <div class="abstract">
+                                        Reward machines (RMs) are automata structures that encode (non-Markovian) reward functions for reinforcement learning (RL). RMs can reward any behaviour representable in regular languages and, when paired with RL algorithms that exploit RM structure, have been shown to significantly improve sample efficiency in many domains. In this work, we present pushdown reward machines (pdRMs), an extension of reward machines based on deterministic pushdown automata. pdRMs can recognise and reward temporally extended behaviours representable in deterministic context-free languages, making them more expressive than reward machines. We introduce two variants of pdRM-based policies, one which has access to the entire stack of the pdRM, and one which can only access the top symbols (for a given constant ) of the stack. We propose a procedure to check when the two kinds of policies (for a given environment, pdRM, and constant ) achieve the same optimal state values. We then provide theoretical results establishing the expressive power of pdRMs, and space complexity results for the proposed learning problems. Lastly, we propose an approach for off-policy RL algorithms that exploits counterfactual experiences with pdRMs. We conclude by providing experimental results showing how agents can be trained to perform tasks representable in deterministic context-free languages using pdRMs.
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li data-venue="conference" data-topics="rl">
+                                <strong>From Sound Workflow Nets to LTL<sub>f</sub> Declarative Specifications by Casting Three Spells</strong> <br> Luca Barbaro, Giovanni Varricchione, Claudio Di Ciccio, Marco Montali. <em>Business Process Management Forum (BPM Forum).</em> [<a href="resources/3spellswizards.pdf">PDF</a>]
+
+                                <a href="#" class="toggle-abstract">Abstract</a>
+                                <div class="abstract-wrapper">
+                                    <div class="abstract">
+                                        In process management, effective behavior modeling is essential for understanding execution dynamics and identifying potential issues. Two complementary paradigms have emerged in the pursuit of this objective: the imperative approach, representing all allowed runs of a system in a graph-based model, and the declarative one, specifying the rules that a run must not violate in a constraint-based specification. Extensive studies have been conducted on the synergy and comparisons of the two paradigms. To date, though, whether a declarative specification could be systematically derived from an imperative model such that the original behavior was fully preserved (and if so, how) remained an unanswered question. In this paper, we propose a three-fold contribution. (1) We introduce a systematic approach to synthesize declarative process specifications from safe and sound Workflow nets. (2) We prove behavioral equivalence of the input net with the output specification, alongside related guarantees. (3) We experimentally demonstrate the scalability and compactness of our encoding through tests conducted with synthetic and real-world testbeds.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2024</summary>
+                    <div class="details-content">
+                        <ul>
+                            <li data-venue="conference" data-topics="rl">
+                                <strong>Pure-Past Action Masking</strong> <br> Giovanni Varricchione, Natasha Alechina, Giuseppe De Giacomo, Mehdi Dastani, Brian Logan, Giuseppe Perelli. <em>AAAI Conference on Artificial Intelligence (AAAI), AAAI Technical Track on Safe, Robust and Responsible AI Track.</em> [<a href="resources/ppam.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]
+                                
+                                <a href="#" class="toggle-abstract">Abstract</a>
+                                <div class="abstract-wrapper">
+                                    <div class="abstract">
+                                        We present Pure-Past Action Masking (PPAM), a lightweight approach to action masking for safe reinforcement learning. In PPAM, actions are disallowed (“masked”) according to specifications expressed in Pure-Past Linear Temporal Logic (PPLTL). PPAM can enforce non-Markovian constraints, i.e., constraints based on the history of the system, rather than just the current state of the (possibly hidden) MDP. The features used in the safety constraint need not be the same as those used by the learning agent, allowing a clear separation of concerns between the safety constraints and reward specifications of the (learning) agent. We prove formally that an agent trained with PPAM can learn any optimal policy that satisfies the safety constraints, and that they are as expressive as shields, another approach to enforce non-Markovian constraints in RL. Finally, we provide empirical results showing how PPAM can guarantee constraint satisfaction in practice.
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li data-venue="conference" data-topics="logic">
+                                <strong>Frame Definability in Conditional Logic</strong> <br> Damiano Fornasiere, Johannes Marti, Giovanni Varricchione. <em>Advances in Modal Logic (AiML).</em> [<a href="resources/aiml-24.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]
+                                
+                                <a href="#" class="toggle-abstract">Abstract</a>
+                                <div class="abstract-wrapper">
+                                    <div class="abstract">
+                                        In this paper we investigate classes of finite partially ordered sets that are definable by non-nested formulas in conditional logic. We discuss examples of such definable classes and introduce the notion of a c-morphism between posets as a tool to show that a class of finite posets is not definable. Using an analogue of the Jankov-Fine formulas from modal logic, we show that a class of finite posets is definable by a set of formulas if and only if it is closed under c-morphic images. Lastly, we prove a Sahlqvist-like correspondence theorem stating that every class of finite posets that is definable by a formula without nested conditionals is also definable by a first-order formula.
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li data-venue="conference" data-topics="rl">
+                                <strong>Maximally Permissive Reward Machines</strong> <br> Giovanni Varricchione, Natasha Alechina, Mehdi Dastani, Brian Logan. <em>European Conference on Artificial Intelligence (ECAI).</em> [<a href="resources/mprm.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]
+                                
+                                <a href="#" class="toggle-abstract">Abstract</a>
+                                <div class="abstract-wrapper">
+                                    <div class="abstract">
+                                        Reward machines allow the definition of rewards for temporally extended tasks and behaviors. Specifying “informative” reward machines can be challenging. One way to address this is to generate reward machines from a high-level abstract description of the learning environment, using techniques such as AI planning. However, previous planning-based approaches generate a reward machine based on a single (sequential or partial-order) plan, and do not allow maximum flexibility to the learning agent. In this paper we propose a new approach to synthesising reward machines which is based on the set of partial order plans for a goal. We prove that learning using such “maximally permissive” reward machines results in higher rewards than learning using RMs based on a single plan. We present experi- mental results which support our theoretical claims by showing that our approach obtains higher rewards than the single-plan approach in practice.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2023</summary>
+                    <div class="details-content">
+                        <ul>
+                            <li data-venue="conference" data-topics="rl">
+                                <strong>Synthesising Reward Machines for Cooperative Multi-Agent Reinforcement Learning</strong> <br> Giovanni Varricchione, Natasha Alechina, Mehdi Dastani, Brian Logan. <em>European Conference on Multi-Agent Systems (EUMAS).</em> [<a href="https://link.springer.com/chapter/10.1007/978-3-031-43264-4_21" target="_blank" rel="noopener noreferrer">Link</a>]
+                                
+                                <a href="#" class="toggle-abstract">Abstract</a>
+                                <div class="abstract-wrapper">
+                                    <div class="abstract">
+                                        Reward machines have recently been proposed as a means of encoding team tasks in cooperative multi-agent reinforcement learning. The resulting multi-agent reward machine is then decomposed into individual reward machines, one for each member of the team, allowing agents to learn in a decentralised manner while still achieving the team task. However, current work assumes the multi-agent reward machine to be given. In this paper, we show how reward machines for team tasks can be synthesised automatically from an Alternating-Time Temporal Logic specification of the desired team behaviour and a high-level abstraction of the agents’ environment. We present results suggesting that our automated approach has comparable, if not better, sample efficiency than reward machines generated by hand for multi-agent tasks.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+            
+            <div class="links"></div> 
+        </div>
+
+        <div class="right-pane" style="background-image: url('images/publications.gif');"></div>
+    </div>
+    
+    <script src="unified-script.js"></script>
+</body>
+</html>

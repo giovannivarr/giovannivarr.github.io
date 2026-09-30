@@ -1,0 +1,73 @@
+// We import the animation logic here because we need to apply it 
+// AFTER the dynamic Zotero HTML is injected into the page.
+import { initAnimations } from './animations.js';
+
+export function loadPublications() {
+    const pubContainer = document.getElementById('publications-container');
+    if (!pubContainer) return;
+
+    const zoteroUserId = "1234567"; 
+    const zoteroCollectionKey = "ABC123XY";
+    const zoteroUrl = `https://api.zotero.org/users/${zoteroUserId}/collections/${zoteroCollectionKey}/items?format=json&include=bib,data&style=apa&sort=date&direction=desc`;
+
+    fetch(zoteroUrl)
+        .then(response => response.json())
+        .then(data => {
+            const groupedPapers = {};
+
+            data.forEach(item => {
+                if (item.data.itemType !== "attachment" && item.data.itemType !== "note") {
+                    let year = "Preprints/Other";
+                    if (item.data.date) {
+                        const parsedYear = new Date(item.data.date).getFullYear();
+                        if (!isNaN(parsedYear)) year = parsedYear.toString();
+                    }
+
+                    if (!groupedPapers[year]) {
+                        groupedPapers[year] = [];
+                    }
+
+                    const link = item.data.url ? item.data.url : "#";
+                    groupedPapers[year].push({
+                        citation: item.bib,
+                        link: link
+                    });
+                }
+            });
+
+            let html = '';
+            const sortedYears = Object.keys(groupedPapers).sort().reverse();
+
+            sortedYears.forEach((year, index) => {
+                const openAttr = index === 0 ? 'open' : '';
+                let listItems = '';
+                
+                groupedPapers[year].forEach(paper => {
+                    listItems += `
+                        <li style="margin-bottom: 1rem;">
+                            ${paper.citation}
+                            <a href="${paper.link}" target="_blank" style="font-size: 0.9em;">[Link/PDF]</a>
+                        </li>
+                    `;
+                });
+
+                html += `
+                    <details ${openAttr}>
+                        <summary>${year}</summary>
+                        <div class="details-content">
+                            <ul style="list-style-type: none; padding-left: 0;">${listItems}</ul>
+                        </div>
+                    </details>
+                `;
+            });
+            
+            pubContainer.innerHTML = html;
+            
+            // Initialize animations on the newly created tags
+            initAnimations();
+        })
+        .catch(error => {
+            console.error('Error loading Zotero publications:', error);
+            pubContainer.innerHTML = '<p>Error loading publications. Please try again later.</p>';
+        });
+}
